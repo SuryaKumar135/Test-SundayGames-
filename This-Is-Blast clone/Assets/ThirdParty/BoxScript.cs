@@ -6,14 +6,30 @@ public class BoxScript : MonoBehaviour
 {
     public bool isBoxSelected;
 
+    [SerializeField]
+    private int BoxColourID=-1;
+
+
     public void selected(float time)
     {
         if(isBoxSelected)
         {
-            transform.DOScale(Vector3.zero, time).OnComplete(() =>
-            {
-                gameObject.SetActive(false);
-            });
+          // TurretManager.instance .GridManager.bulletCount--;
+           gameObject.SetActive(false);
         }
+    }
+
+    public int GetColourID()
+    {
+        return BoxColourID;
+    }
+    public void SetColourId(int colourID)
+    {
+        BoxColourID = colourID;
+    }
+
+    public void SetBoxColour(Color colour)
+    {
+        transform.GetComponent<Renderer>().material.color = colour;
     }
 }
