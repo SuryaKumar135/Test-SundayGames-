@@ -9,13 +9,23 @@ public class BoxScript : MonoBehaviour
     [SerializeField]
     private int BoxColourID=-1;
 
+    bool isMoving;
 
-    public void selected(float time)
+    public void Selected(float time)
     {
         if(isBoxSelected)
         {
           // TurretManager.instance .GridManager.bulletCount--;
            gameObject.SetActive(false);
+        }
+    }
+
+    public void Selected()
+    {
+        if (isBoxSelected)
+        {
+            // TurretManager.instance .GridManager.bulletCount--;
+            gameObject.SetActive(false);
         }
     }
 
@@ -31,5 +41,15 @@ public class BoxScript : MonoBehaviour
     public void SetBoxColour(Color colour)
     {
         transform.GetComponent<Renderer>().material.color = colour;
+    }
+
+    public bool GetIsMoving()
+    {
+        return isMoving;
+    }
+
+    public void SetIsMoving(bool value)
+    {
+        isMoving=value;
     }
 }

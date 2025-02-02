@@ -7,7 +7,7 @@ public class TurretManager : MonoBehaviour
     public List<Turrets> InactiveTurretsList = new List<Turrets>();
     [SerializeField] List<Turrets> ActiveTurretList = new List<Turrets>();
 
-    [SerializeField] public GridManager GridManager = new GridManager();
+    [SerializeField] public GridManager GridManager;
 
 
     public static TurretManager instance;

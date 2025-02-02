@@ -11,7 +11,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private int row;
     [SerializeField] private int column;
 
-    [SerializeField] private float cubeMoveTime = .2f;
+    public float cubeMoveTime = .2f;
     [SerializeField] private float scaleTime = .2f;
 
     public GameObject[,] boxArray;
@@ -74,7 +74,7 @@ public class GridManager : MonoBehaviour
 
     private void Update()
     {
-        CheckAndMoveRow();
+       // CheckAndMoveRow();
         InptDetectMouse();
     }
     private void InptDetectMouse()
@@ -87,62 +87,69 @@ public class GridManager : MonoBehaviour
             Debug.Log($"Object Name{hit.collider.gameObject}");
             if (hit.collider.TryGetComponent(out Turrets turret))
             {
-                turret.TurretSelected();
+                turret.OnTurreSelect();
             }
         }
     }
+
+    #region Grid Types
+
+
+    #endregion
+
+    //Not Using Called In Turret 
 
     /// <summary>
     /// Checks if a row needs movement and triggers the movement coroutine.
     /// </summary>
-    Tween scaleTween = null;
-    private void CheckAndMoveRow()
-    {
-        if(isMoving) { return; }
-        for (int x = 0; x < boxArray.GetLength(0); x++)
-        {
-           // Debug.Log($" Object Names : {boxArray[x, 0]}");
-            if (boxArray[x, 0].TryGetComponent(out BoxScript script))
-            {
-                Debug.Log($" Box ID {script.GetColourID()} : ");
-                script.isBoxSelected = TurretManager.instance.ReturnActiveTurret(script.GetColourID());
-                if (script.isBoxSelected)
-                {
-                    script.selected(scaleTime);
-                    StartCoroutine(MoveBoxes(x));
-                }
-            }
-        }
-    }
+    //Tween scaleTween = null;
+    //private void CheckAndMoveRow()
+    //{
+    //    if(isMoving) { return; }
+    //    for (int x = 0; x < boxArray.GetLength(0); x++)
+    //    {
+    //       // Debug.Log($" Object Names : {boxArray[x, 0]}");
+    //        if (boxArray[x, 0].TryGetComponent(out BoxScript script))
+    //        {
+    //            Debug.Log($" Box ID {script.GetColourID()} : ");
+    //            script.isBoxSelected = TurretManager.instance.ReturnActiveTurret(script.GetColourID());
+    //            if (script.isBoxSelected)
+    //            {
+    //                script.Selected(scaleTime);
+    //                StartCoroutine(MoveBoxes(x));
+    //            }
+    //        }
+    //    }
+    //}
 
 
 
 
-    private IEnumerator MoveBoxes(int rowIndex)
-    {
-        for (int y = 0; y < boxArray.GetLength(1) - 1; y++)
-        {
-            if (boxArray[rowIndex, y + 1] != null && boxArray[rowIndex, y + 1].activeSelf)
-            {
-                // Swap references first to prevent wrong positions in the next iteration
-                GameObject tempBox = boxArray[rowIndex, y];
-                boxArray[rowIndex, y] = boxArray[rowIndex, y + 1];
-                boxArray[rowIndex, y + 1] = tempBox;
+    //private IEnumerator MoveBoxes(int rowIndex)
+    //{
+    //    for (int y = 0; y < boxArray.GetLength(1) - 1; y++)
+    //    {
+    //        if (boxArray[rowIndex, y + 1] != null && boxArray[rowIndex, y + 1].activeSelf)
+    //        {
+    //            // Swap references first to prevent wrong positions in the next iteration
+    //            GameObject tempBox = boxArray[rowIndex, y];
+    //            boxArray[rowIndex, y] = boxArray[rowIndex, y + 1];
+    //            boxArray[rowIndex, y + 1] = tempBox;
 
-                // Store positions before moving
-                Vector3 firstPos = boxArray[rowIndex, y].transform.position;
-                Vector3 secondPos = boxArray[rowIndex, y + 1].transform.position;
+    //            // Store positions before moving
+    //            Vector3 firstPos = boxArray[rowIndex, y].transform.position;
+    //            Vector3 secondPos = boxArray[rowIndex, y + 1].transform.position;
 
-                // Move both boxes with DOTween and wait for completion
-                Tween moveFirst = boxArray[rowIndex, y].transform.DOMove(secondPos, cubeMoveTime);
-                Tween moveSecond = boxArray[rowIndex, y + 1].transform.DOMove(firstPos, cubeMoveTime);
+    //            // Move both boxes with DOTween and wait for completion
+    //            Tween moveFirst = boxArray[rowIndex, y].transform.DOMove(secondPos, cubeMoveTime);
+    //            Tween moveSecond = boxArray[rowIndex, y + 1].transform.DOMove(firstPos, cubeMoveTime);
 
-                isMoving = true;
-                yield return moveFirst.WaitForCompletion();
-                yield return moveSecond.WaitForCompletion();
-                isMoving = false;
-            }
-        }
-    }
+    //            isMoving = true;
+    //            yield return moveFirst.WaitForCompletion();
+    //            yield return moveSecond.WaitForCompletion();
+    //            isMoving = false;
+    //        }
+    //    }
+    //}
 
 }
