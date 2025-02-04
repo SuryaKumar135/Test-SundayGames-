@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance { get; private set; }
 
     [Header("Canvas References")]
-    [SerializeField] private GameObject levelCompletionCanvas;        
+    [SerializeField] private GameObject levelCompletionObject;        
     [SerializeField] private GameObject GameComplete;
 
     private void Awake()
@@ -20,14 +20,14 @@ public class UIManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject); 
+        //DontDestroyOnLoad(gameObject); 
     }
 
     public void ShowLevelCompletion()
     {
-        if (levelCompletionCanvas != null)
+        if (levelCompletionObject != null)
         {
-            levelCompletionCanvas.SetActive(true);
+            levelCompletionObject.SetActive(true);
         }
     }
     
@@ -39,8 +39,8 @@ public class UIManager : MonoBehaviour
        
         if (currentSceneIndex + 1 < SceneManager.sceneCountInBuildSettings)
         {
+            levelCompletionObject.SetActive(false);
             SceneManager.LoadScene(currentSceneIndex + 1);
-            levelCompletionCanvas.SetActive(false);
         }
         else
         {
@@ -51,7 +51,7 @@ public class UIManager : MonoBehaviour
 
     public void EnableNextLevelMenu()
     {
-        levelCompletionCanvas.SetActive(true);
+        levelCompletionObject.SetActive(true);
     }
 
     public void LoadMainMenu()

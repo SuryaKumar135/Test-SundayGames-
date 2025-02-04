@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using UnityEngine.InputSystem.EnhancedTouch;
-using UnityEngine.InputSystem;
 
 public class GridManager : MonoBehaviour
 {
@@ -87,18 +85,47 @@ public class GridManager : MonoBehaviour
         }
     }
 
-   
+    bool check;
 
     private void Update()
     {
        // CheckAndMoveRow();
-        InptDetectMouse();
-        if (noOfCubes<=0)
+        if (noOfCubes<=0 && !check)
         {
+            check = true;
             UIManager.Instance.ShowLevelCompletion();
         }
+        InputDetectMouse();
+        if (Input.touchCount > 0)
+        {
+            UnityEngine.Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == UnityEngine.TouchPhase.Began)
+            {
+                OnTouchDown(touch);
+            }
+        }
+
     }
-    private void InptDetectMouse()
+
+    private void OnTouchDown(Touch touch)
+    {
+
+        // Convert the touch position to a world point
+        Vector3 touchPosition = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 1000));
+        Debug.DrawLine(Camera.main.transform.position, touchPosition,Color.black);
+        RaycastHit2D hit = Physics2D.Raycast(touchPosition, Vector2.zero);
+
+        if (hit.collider != null && hit.collider.gameObject == gameObject)
+        {
+            if (hit.collider.TryGetComponent(out Turrets turret))
+            {
+                turret.OnTurreSelect();
+            }
+        }
+    }
+
+    private void InputDetectMouse()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 

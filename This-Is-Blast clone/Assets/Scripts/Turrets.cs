@@ -141,7 +141,7 @@ public class Turrets : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(0.1f); // Ensure all animations finish before marking movement as complete
+        yield return new WaitForSeconds(0.1f); 
         gridManager.boxArray[rowIndex, gridManager.boxArray.GetLength(1) - 1]=null;
         IsBoxsMoving = false;
     }

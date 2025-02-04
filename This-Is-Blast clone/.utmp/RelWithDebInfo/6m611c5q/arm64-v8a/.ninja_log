@@ -1,0 +1,10 @@
+# ninja log v5
+182	3091	7603844177764782	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	8dd76ec8e75a8551
+134	3120	7603844178134525	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	1c112d86c4486d71
+34	3173	7603844178583656	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	3af27937076a802b
+279	3232	7603844179438649	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	be237ca664e78e98
+2	3566	7603844182854242	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	107a0a407f897fd2
+318	3599	7603844183183211	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	58eb1c1a54592c43
+230	3907	7603844186239480	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	7e071b163de78de6
+83	4151	7603844188623356	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	3bd5ad1c646dac88
+4152	4363	7603844190741560	D:/GitRepoForSoulsLike/Test-SundayGames-/This-Is-Blast clone/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6m611c5q/obj/arm64-v8a/libgame.so	ac6e927ef397a958

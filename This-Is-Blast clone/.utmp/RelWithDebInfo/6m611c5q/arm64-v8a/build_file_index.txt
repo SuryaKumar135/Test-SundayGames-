@@ -1,0 +1,2 @@
+D:\GitRepoForSoulsLike\Test-SundayGames-\This-Is-Blast clone\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+D:\GitRepoForSoulsLike\Test-SundayGames-\This-Is-Blast clone\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

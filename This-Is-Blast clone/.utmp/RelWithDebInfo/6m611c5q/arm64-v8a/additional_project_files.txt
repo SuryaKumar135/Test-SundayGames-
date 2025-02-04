@@ -1,0 +1,17 @@
+D:\GitRepoForSoulsLike\Test-SundayGames-\This-Is-Blast clone\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\GAToUnityCallbacks.h
+D:\GitRepoForSoulsLike\Test-SundayGames-\This-Is-Blast clone\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\MacroEnd.h
+D:\GitRepoForSoulsLike\Test-SundayGames-\This-Is-Blast clone\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\MacroHeaderBegin.h
+D:\GitRepoForSoulsLike\Test-SundayGames-\This-Is-Blast clone\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\MacroSourceBegin.h
+D:\GitRepoForSoulsLike\Test-SundayGames-\This-Is-Blast clone\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGAApplication.h
+D:\GitRepoForSoulsLike\Test-SundayGames-\This-Is-Blast clone\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGAConfiguration.h
+D:\GitRepoForSoulsLike\Test-SundayGames-\This-Is-Blast clone\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGADebug.h
+D:\GitRepoForSoulsLike\Test-SundayGames-\This-Is-Blast clone\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGAEvents.h
+D:\GitRepoForSoulsLike\Test-SundayGames-\This-Is-Blast clone\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGAInput.h
+D:\GitRepoForSoulsLike\Test-SundayGames-\This-Is-Blast clone\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGASoftKeyboard.h
+D:\GitRepoForSoulsLike\Test-SundayGames-\This-Is-Blast clone\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGASoftKeyboardCallbacks.h
+D:\GitRepoForSoulsLike\Test-SundayGames-\This-Is-Blast clone\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGATypes.h
+D:\GitRepoForSoulsLike\Test-SundayGames-\This-Is-Blast clone\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGAVersion.h
+D:\GitRepoForSoulsLike\Test-SundayGames-\This-Is-Blast clone\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UnityToGACallbacks.h
+D:\GitRepoForSoulsLike\Test-SundayGames-\This-Is-Blast clone\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UnityToGAConfigurationCallbacks.h
+D:\GitRepoForSoulsLike\Test-SundayGames-\This-Is-Blast clone\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UnityToGAKeyEventCallbacks.h
+D:\GitRepoForSoulsLike\Test-SundayGames-\This-Is-Blast clone\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UnityToGAMotionEventCallbacks.h

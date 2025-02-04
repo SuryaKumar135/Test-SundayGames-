@@ -1,0 +1,5 @@
+D:/GitRepoForSoulsLike/Test-SundayGames-/This-Is-Blast clone/.utmp/RelWithDebInfo/6m611c5q/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/GitRepoForSoulsLike/Test-SundayGames-/This-Is-Blast clone/.utmp/RelWithDebInfo/6m611c5q/arm64-v8a/CMakeFiles/rebuild_cache.dir
+D:/GitRepoForSoulsLike/Test-SundayGames-/This-Is-Blast clone/.utmp/RelWithDebInfo/6m611c5q/arm64-v8a/GameActivity/CMakeFiles/game.dir
+D:/GitRepoForSoulsLike/Test-SundayGames-/This-Is-Blast clone/.utmp/RelWithDebInfo/6m611c5q/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+D:/GitRepoForSoulsLike/Test-SundayGames-/This-Is-Blast clone/.utmp/RelWithDebInfo/6m611c5q/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
