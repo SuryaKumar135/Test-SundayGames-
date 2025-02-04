@@ -5,26 +5,14 @@ using UnityEngine;
 public class BoxScript : MonoBehaviour
 {
     public bool isBoxSelected;
+    [SerializeField] private int BoxColourID = -1;
 
-    [SerializeField]
-    private int BoxColourID=-1;
-
-    bool isMoving;
-
-    public void Selected(float time)
-    {
-        if(isBoxSelected)
-        {
-          // TurretManager.instance .GridManager.bulletCount--;
-           gameObject.SetActive(false);
-        }
-    }
-
-    public void Selected()
+    public void Selected(Turrets turrets)
     {
         if (isBoxSelected)
         {
-            // TurretManager.instance .GridManager.bulletCount--;
+            turrets.DetectBullets();
+            TurretManager.instance.GridManager.noOfCubes--;
             gameObject.SetActive(false);
         }
     }
@@ -33,6 +21,7 @@ public class BoxScript : MonoBehaviour
     {
         return BoxColourID;
     }
+
     public void SetColourId(int colourID)
     {
         BoxColourID = colourID;
@@ -41,15 +30,5 @@ public class BoxScript : MonoBehaviour
     public void SetBoxColour(Color colour)
     {
         transform.GetComponent<Renderer>().material.color = colour;
-    }
-
-    public bool GetIsMoving()
-    {
-        return isMoving;
-    }
-
-    public void SetIsMoving(bool value)
-    {
-        isMoving=value;
     }
 }

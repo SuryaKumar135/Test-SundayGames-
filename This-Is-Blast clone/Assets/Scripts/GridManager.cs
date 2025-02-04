@@ -11,28 +11,44 @@ public class GridManager : MonoBehaviour
     [SerializeField] private int row;
     [SerializeField] private int column;
 
-    public float cubeMoveTime = .2f;
-    [SerializeField] private float scaleTime = .2f;
+    [Space]
+    [Header("Box Move Timing")]
+
+    public float cubeMoveTime = .1f;
+    public float scaleTime = .1f;
+
+    [Space]
+    [Header("Bullet Move Timing")]
+    public float bulletMoveTime = .1f;
 
     public GameObject[,] boxArray;
 
+    [Space]
+    [Header("Grid Spacing Offset")]
     [SerializeField] private Vector2 boxPositioningOffset;
 
-    private bool isMoving;
 
-    [Space]
-    [SerializeField] private int noOfCubes;
+    public int noOfCubes;
 
     public int bulletCount=20;
     public int cubesDestroyed;
 
-    Color color1 = Color.red;  // First color
-    Color color2 = Color.blue; // Second color
+    //Color color1 = Color.red;  // First color
+    //Color color2 = Color.blue; // Second color
+
+    private GridPattern _gridPattern;
 
     private void Start()
     {
-        color1 = TurretManager.instance.InactiveTurretsList[0].GetComponent<Renderer>().material.color;
-        color2 = TurretManager.instance.InactiveTurretsList[1].GetComponent<Renderer>().material.color;
+        //color1 = TurretManager.instance.InactiveTurretsList[0].GetComponent<Renderer>().material.color;
+        //color2 = TurretManager.instance.InactiveTurretsList[1].GetComponent<Renderer>().material.color;
+
+        //grid manager initializer
+
+        _gridPattern=GetComponentInChildren<GridPattern>();
+        _gridPattern.InitializeVariables();
+
+
         GenerateLevel();
         Debug.Log($"Number Of childs {transform.childCount}");
         
@@ -54,18 +70,19 @@ public class GridManager : MonoBehaviour
                 boxArray[i, j] = box;
                 noOfCubes++;
 
-                if (i < row / 2)  // Left side of the split
-                {
-                    int id= TurretManager.instance.InactiveTurretsList[0].GetComponent<Turrets>().GetColourID();
-                    box.GetComponent<BoxScript>().SetColourId(id);
-                    box.GetComponent<BoxScript>().SetBoxColour(color1);
-                }
-                else // Right side of the split
-                {
-                    int id = TurretManager.instance.InactiveTurretsList[1].GetComponent<Turrets>().GetColourID();
-                    box.GetComponent<BoxScript>().SetColourId(id);
-                    box.GetComponent<BoxScript>().SetBoxColour(color2);
-                }
+                //if (i < row / 2)  // Left side of the split
+                //{
+                //    int id= TurretManager.instance.InactiveTurretsList[0].GetComponent<Turrets>().GetColourID();
+                //    box.GetComponent<BoxScript>().SetColourId(id);
+                //    box.GetComponent<BoxScript>().SetBoxColour(color1);
+                //}
+                //else // Right side of the split
+                //{
+                //    int id = TurretManager.instance.InactiveTurretsList[1].GetComponent<Turrets>().GetColourID();
+                //    box.GetComponent<BoxScript>().SetColourId(id);
+                //    box.GetComponent<BoxScript>().SetBoxColour(color2);
+                //}
+                _gridPattern.SetGripPattern(i,j,row,column,box);
             }
         }
     }
@@ -76,6 +93,10 @@ public class GridManager : MonoBehaviour
     {
        // CheckAndMoveRow();
         InptDetectMouse();
+        if (noOfCubes<=0)
+        {
+            UIManager.Instance.ShowLevelCompletion();
+        }
     }
     private void InptDetectMouse()
     {
@@ -84,7 +105,7 @@ public class GridManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && Physics.Raycast(ray, out RaycastHit hit) && hit.collider != null)
         {
-            Debug.Log($"Object Name{hit.collider.gameObject}");
+           // Debug.Log($"Object Name{hit.collider.gameObject}");
             if (hit.collider.TryGetComponent(out Turrets turret))
             {
                 turret.OnTurreSelect();

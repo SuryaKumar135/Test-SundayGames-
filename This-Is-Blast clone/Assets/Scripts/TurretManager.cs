@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class TurretManager : MonoBehaviour
@@ -17,6 +18,8 @@ public class TurretManager : MonoBehaviour
 
     [SerializeField] private List<TurretShootPoint> turretShootPoints = new List<TurretShootPoint>();
 
+    public ObjectPooling bulletPool;
+
 
     private void Awake()
     {
@@ -27,6 +30,11 @@ public class TurretManager : MonoBehaviour
         {
             Destroy(instance);
         }
+    }
+
+    private void OnEnable()
+    {
+        bulletPool=GameObject.FindAnyObjectByType<ObjectPooling>();
     }
 
     public bool ReturnActiveTurret(int id)
@@ -75,4 +83,5 @@ public class TurretShootPoint
 {
     public Transform pos;
     public bool isInAction;
+    public TextMeshProUGUI bulletCount;
 }
